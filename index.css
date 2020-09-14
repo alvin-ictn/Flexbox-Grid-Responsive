@@ -48,8 +48,11 @@ body {
 }
 
 .content--panel * {
-  flex: 1 0 200px;
   position: relative;
+}
+
+.content--panel--search {
+  width:calc(95vw - var(--value));
 }
 
 .content--panel * *:first-child {
@@ -61,7 +64,7 @@ body {
 #search {
   position: absolute;
   top: 5px;
-  right: 25px;
+  right: 20px;
 }
 
 .content--panel *:nth-child(2){
@@ -70,11 +73,24 @@ body {
 
 .content--panel--add--button-add {
   background-color: var(--primary);
-  color: var(--secondary)
+  color: var(--secondary);
+  padding:calc(var(--value) - 10px) !important;
+  font-size: var(--value);
+  border-radius: 50% !important;
+  position: fixed;
+  bottom: var(--value);
+  right: var(--value);
+}
+
+.content--panel--add--button-add:after {
+  content: "+";
+  width: var(--value);
+  height: var(--value);
+  display: block;
 }
 
 .content--panel--search-search-item {
-  width: calc(100% - var(--value));
+  width: 100% !important;
 }
 
 .content--cards {
@@ -112,6 +128,30 @@ body {
   .__container {
     width: 80%;
   }
+  
+  .content--panel * {
+    flex: 1 0 200px;
+  }
+
+  .content--panel--search-search-item {
+    width: calc(100% - var(--value));
+  }
+
+  .content--panel--add--button-add {
+    background-color: var(--primary);
+    color: var(--secondary);
+    padding: 10px 30px !important;
+    border-radius: 5px !important;
+    font-size:18px;
+    position: unset;
+  }
+
+  .content--panel--add--button-add:after {
+    content: "Add Item";
+    width: unset;
+    height: unset;
+    display: block;
+  }
 
   .content--cards {
     flex-direction: row;
@@ -121,4 +161,5 @@ body {
   .content--cards--card-item {
     flex: 1 0 200px;
   }
+  
 }
