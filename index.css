@@ -65,6 +65,7 @@ body {
   position: absolute;
   top: 5px;
   right: 20px;
+  cursor: pointer;
 }
 
 .content--panel *:nth-child(2){
@@ -80,6 +81,7 @@ body {
   position: fixed;
   bottom: var(--value);
   right: var(--value);
+  z-index:5;
 }
 
 .content--panel--add--button-add:after {
@@ -104,6 +106,7 @@ body {
   box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
   flex:1;
   background-color: var(--secondary);
+  position: relative;
 }
 
 .content--cards--card-item--title {
@@ -116,6 +119,13 @@ body {
   font-size: 12px;
 }
 
+.content--cards--card-item--id {
+  position: absolute;
+  top:20px;
+  right:20px;
+  font-size: 15px;
+}
+
 @media (min-width:649px) {
   :root {
     --value : 15px;
@@ -126,9 +136,9 @@ body {
   }
   
   .__container {
-    width: 80%;
+    width: 60%;
   }
-  
+
   .content--panel * {
     flex: 1 0 200px;
   }
@@ -144,6 +154,7 @@ body {
     border-radius: 5px !important;
     font-size:18px;
     position: unset;
+    cursor: pointer;
   }
 
   .content--panel--add--button-add:after {
@@ -159,7 +170,8 @@ body {
   }
 
   .content--cards--card-item {
-    flex: 1 0 200px;
+    box-sizing: content-box;
+    flex: 1 0 25%;
   }
   
 }
